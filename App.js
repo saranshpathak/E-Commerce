@@ -15,8 +15,7 @@ const Drawer = createDrawerNavigator();
 export default function App() {
   return (
     <View style={styles.container}>
-      <StatusBar barStyle={'light-content'} backgroundColor="#007bff"/>
-      <Text> Hello World</Text>
+      <StatusBar barStyle={'light-content'} />
       <NavigationContainer>
        <Drawer.Navigator initialRouteName = "Home" screenOptions={{headerShown: true}}>
          <Drawer.Screen name ="Home" component={Home} />
@@ -34,6 +33,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor:'red',
+    backgroundColor:'white',
   },
 });
