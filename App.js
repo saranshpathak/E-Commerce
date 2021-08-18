@@ -29,7 +29,7 @@ export default function App() {
     <View style={styles.container}>
       <StatusBar barStyle={'light-content'} />
       <NavigationContainer>
-       <Drawer.Navigator initialRouteName = "Home" screenOptions={{headerShown: true}}>
+       <Drawer.Navigator initialRouteName = "Cart" screenOptions={{headerShown: true}}>
          <Drawer.Screen name ="Home" component={Home} />
          <Drawer.Screen name ="ProductInfo" component={ProductInfo} />
          <Drawer.Screen name ="Cart" component={Cart} />

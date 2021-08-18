@@ -1,5 +1,12 @@
 export const initialState ={
-    cart:[],
+    cart:[
+        {
+            id: 'p1',
+    name: 'Samsung Galaxy M42 5G ',
+    img: 'https://m.media-amazon.com/images/I/71LweCKOpFL._AC_UY327_FMwebp_QL65_.jpg',
+    price: 21999,
+        }
+    ],
     orders:[]
 }
 
