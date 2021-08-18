@@ -2,20 +2,24 @@ import React from 'react'
 import {Text,View , StyleSheet, ScrollView, Pressable,Image} from 'react-native';
 
 import { products} from '../constant';
+import { AppContext } from '../App';
 
- const Home = () => {
+ const Home = ({navigation}) => {
     return (
         <View style = {styles.homeComponent}>
             <ScrollView style={styles.scroll}>
                 {
                     products.map((p) =>(
-                <Pressable style = {styles.productContainer}>
+                <Pressable style = {styles.productContainer}
+                onPress ={()=>{navigation.navigate('ProductInfo', p)}}
+                android_ripple={{color:'gray',borderless:true}}
+                >
                     <View style ={styles.leftContaier}> 
                     <Image source ={{ uri: p.img}} style ={styles.img} />
                     </View>
                     <View style = {styles.rightContainer} >
-                        <Text> {p.name}</Text>
-                        <Text>
+                        <Text  style ={styles.nameText}> {p.name}</Text>
+                        <Text style ={styles.priceText}>
                             Rs.{p.price}
                         </Text>
                     </View>
@@ -49,6 +53,8 @@ import { products} from '../constant';
     borderRadius: 10,
     flexDirection: 'row',
     marginBottom: 15,
+    paddingLeft:10,
+    
 
     },
     leftContaier:{
@@ -58,13 +64,26 @@ import { products} from '../constant';
     rightContainer:{
         flex:6,
         //backgroundColor:'blue',
+        marginLeft:20,
     },
     img:{
         height:'100%',
         width:'100%',
-        borderRadius:10
+        borderRadius:20,
     },
-   
-
+    nameText:{
+        fontSize:20,
+        color:'black',
+        marginBottom:5,
+        padding:2,
+        marginTop:10
+    },
+    priceText:{
+        font:15,
+        color:'blue',
+        fontWeight:'bold',
+        padding:2,
+        marginTop:5,
+    }
 })
 export default Home
